@@ -1,0 +1,35 @@
+import React, { useState } from 'react';
+
+function Header(props) {
+  return (
+    <header>
+      <h1>{props.pageTitle}</h1>
+    </header>
+  );
+}
+
+function Content() {
+  const [paragraphText, setParagraphText] = useState('Initial paragraph text.');
+
+  const handleButtonClick = () => {
+    setParagraphText('New paragraph text!');
+  };
+
+  return (
+    <div>
+      <p>{paragraphText}</p>
+      <button onClick={handleButtonClick}>Change paragraph text</button>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <div>
+      <Header pageTitle="My Page Title" />
+      <Content />
+    </div>
+  );
+}
+
+export default App;
